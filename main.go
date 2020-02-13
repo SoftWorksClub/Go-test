@@ -1,18 +1,24 @@
-// Echo1 prints its command-line arguments.
+// Copyright © 2016 Alan A. A. Donovan & Brian W. Kernighan.
+// License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+// See page 6.
+//!+
+
+// Echo2 prints its command-line arguments.
 package main
 
 import (
 	"fmt"
-	"os"
+    "os"
 )
 
 func main() {
-	var sep string
-	for i := 1; i < len(os.Args); i++ {
-		fmt.Printf(sep + os.Args[i])
-		sep = " "
+	s, sep := "", ""
+    for _, arg := range os.Args[1:] {
+		s += sep + arg
+        sep = " "
 	}
-	fmt.Printf("\n")
+    fmt.Println(s)
 }
 
-// End of File
+//!-
