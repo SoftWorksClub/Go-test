@@ -9,16 +9,15 @@ package main
 
 import (
 	"fmt"
-    "os"
+	"os"
 )
 
 func main() {
-	s, sep := "", ""
-    for _, arg := range os.Args[1:] {
-		s += sep + arg
-        sep = " "
+	fmt.Println("The executing program:", os.Args[0])
+
+	for i := 1; i < len(os.Args); i++ {
+		fmt.Println(i, ": " + os.Args[i] + " .")
 	}
-    fmt.Println(s)
 }
 
 //!-
