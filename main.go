@@ -1,8 +1,15 @@
+// Echo1 prints its command-line arguments.
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
-//Test gitpod with github and golang
 func main() {
-	fmt.Println("Hello, World!")
+	var sep string
+	for i := 1; i < len(os.Args); i++ {
+		fmt.Println(sep + os.Args[i])
+		sep = " "
+	}
 }
