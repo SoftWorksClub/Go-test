@@ -9,7 +9,8 @@ import (
 func main() {
 	var sep string
 	for i := 1; i < len(os.Args); i++ {
-		fmt.Println(sep + os.Args[i])
+		fmt.Printf(sep + os.Args[i])
 		sep = " "
 	}
+	fmt.Printf("\n")
 }
